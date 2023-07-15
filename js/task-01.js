@@ -1,12 +1,13 @@
- const itemEl = document.querySelectorAll(`.item`);
- itemEl.child("item")
- console.log(itemEl);
 
-const titleEl = document.querySelector("h2").textContent;
-titleEl.querySelectorAll("H2")
- console.log(titleEl.textContent);
+const listEl = document.querySelectorAll('li.item');
 
+console.log(`Number of categories: ${listEl.length} `);
 
-categories.forEach(function (number, index) {
-    console.log(`Індекс ${index}, значення ${number}`);
-  });
+const ulEl = document.querySelectorAll('#categories>li');
+ulEl.forEach(el => {
+
+  console.log(
+    `Category: ${el.firstElementChild.textContent},
+     elements: ${el.lastElementChild.children.length}`,
+  );
+});
