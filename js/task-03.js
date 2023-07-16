@@ -22,7 +22,7 @@ ulEl.style.flexDirection = "row";
 
 
 ulEl.style.listStyle = "none";
-const markup = images.map(({url, alt})=> `<li><img src = ${url} alt = ${alt} width = 200 px height = 150 /></li>`).join("");
+const markup = images.map(({url, alt})=> `<li><img src = ${url} alt = ${alt} width = 300 px height = 150 /></li>`).join("");
   
 ulEl.insertAdjacentHTML("beforeend", markup);
 console.log(markup);
