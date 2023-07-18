@@ -1,27 +1,27 @@
-document.body.style.backgroundColor = '#232931';
-document.body.style.color = '#eeeeee';
+ document.body.style.backgroundColor = '#232931';
+ document.body.style.color = '#eeeeee';
 
-const loginForm = document.querySelector('.login-form');
+ const loginForm = document.querySelector('.login-form');
 
 
- loginForm.addEventListener('submit', submitHandler);
- const profile = {};
+  loginForm.addEventListener('submit', handleSubmit);
+ 
 
- function submitHandler(event) {
-   event.preventDefault();
+  function handleSubmit(event) {
+  event.preventDefault();
 
-   const email = event.currentTarget.elements.email;
-   const password = event.currentTarget.elements.password;
+  const {
+    elements: { email, password },
+} = event.currentTarget
 
-  if (email.value === '' || password.value === '') {
-     alert('Please fill in all the fields!');
-   } else {
-     profile.email = email.value;
-     profile.password = password.value;
+   if (email.value === '' || password.value === '') {
+     return  alert('Please fill in all the fields!');
+    } 
 
-     console.log(profile);
-   }
-   event.currentTarget.reset();
- }
+       const profile = { email: email.value, Password: password.value };
 
-    
+      console.log(profile);
+   
+    event.currentTarget.reset();
+  
+  }

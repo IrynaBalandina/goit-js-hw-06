@@ -1,5 +1,18 @@
-function getRandomHexColor() {
-  return `#${Math.floor(Math.random() * 16777215)
-    .toString(16)
-    .padStart(6, 0)}`;
+function handleFormSubmit(e) {
+  e.preventDefault();
+  const { email, password } = e.currentTarget.elements;
+  // const {
+  //   elements: { email, password },
+  // } = e.currentTarget;
+
+  if (!email.value.trim() || !password.value.trim()) {
+    return alert('Please fill in all the fields!');
+  } else {
+    const formData = {
+      email: email.value,
+      password: password.value,
+    };
+    console.log(formData);
+    e.currentTarget.reset();
+  }
 }
